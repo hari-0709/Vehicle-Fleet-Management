@@ -19,10 +19,10 @@ void addVehicle() {
     scanf("%d", &newNode->id);
 
     printf("Enter Vehicle Name: ");
-    scanf("%s", newNode->name);
+    scanf("%s", &newNode->name);
 
     printf("Enter Vehicle Type: ");
-    scanf("%s", newNode->type);
+    scanf("%s", &newNode->type);
 
     printf("Enter Mileage: ");
     scanf("%f", &newNode->mileage);
