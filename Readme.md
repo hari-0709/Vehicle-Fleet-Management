@@ -88,7 +88,7 @@ gcc main.c -o project
 
 ## 📊 Sample Output
 
----
+```bash
 
 ====== Vehicle Fleet Management ======
 1. Add Vehicle
@@ -141,4 +141,4 @@ ID: 102 | Name: CarX | Type: SUV | Mileage: 20.50
 Enter your choice: 6
 Exiting...
 
----
+```
