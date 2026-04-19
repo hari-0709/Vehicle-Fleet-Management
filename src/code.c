@@ -12,17 +12,25 @@ struct Vehicle {
 
 struct Vehicle* head = NULL;
 
+void removeNewline(char* str) {
+    str[strcspn(str, "\n")] = 0;
+}
+
 void addVehicle() {
-    struct Vehicle* newNode = (struct Vehicle*)malloc(sizeof(struct Vehicle));
+    struct Vehicle* newNode = malloc(sizeof(struct Vehicle));
 
     printf("Enter Vehicle ID: ");
     scanf("%d", &newNode->id);
 
+    getchar();
+
     printf("Enter Vehicle Name: ");
-    scanf(" %s", &newNode->name);
+    fgets(newNode->name, 50, stdin);
+    removeNewline(newNode->name);
 
     printf("Enter Vehicle Type: ");
-    scanf(" %s", &newNode->type);
+    fgets(newNode->type, 30, stdin);
+    removeNewline(newNode->type);
 
     printf("Enter Mileage: ");
     scanf("%f", &newNode->mileage);
@@ -55,6 +63,7 @@ void searchVehicle() {
     scanf("%d", &id);
 
     struct Vehicle* temp = head;
+
     while (temp != NULL) {
         if (temp->id == id) {
             printf("Found -> ID: %d | Name: %s | Type: %s | Mileage: %.2f\n",
@@ -105,11 +114,16 @@ void updateVehicle() {
 
     while (temp != NULL) {
         if (temp->id == id) {
+
+            getchar();
+
             printf("Enter New Name: ");
-            scanf("%s", temp->name);
+            fgets(temp->name, 50, stdin);
+            removeNewline(temp->name);
 
             printf("Enter New Type: ");
-            scanf("%s", temp->type);
+            fgets(temp->type, 30, stdin);
+            removeNewline(temp->type);
 
             printf("Enter New Mileage: ");
             scanf("%f", &temp->mileage);
@@ -121,6 +135,16 @@ void updateVehicle() {
     }
 
     printf("Vehicle not found.\n");
+}
+
+void freeAll() {
+    struct Vehicle* temp = head;
+
+    while (temp != NULL) {
+        struct Vehicle* next = temp->next;
+        free(temp);
+        temp = next;
+    }
 }
 
 int main() {
@@ -144,8 +168,12 @@ int main() {
             case 3: updateVehicle(); break;
             case 4: searchVehicle(); break;
             case 5: displayVehicles(); break;
-            case 6: printf("Exiting...\n"); break;
-            default: printf("Invalid choice.\n");
+            case 6:
+                freeAll();
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice.\n");
         }
 
     } while (choice != 6);
