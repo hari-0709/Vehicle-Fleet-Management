@@ -1,0 +1,72 @@
+====== Vehicle Fleet Management System ======
+
+1. Add Vehicle
+2. Delete Vehicle
+3. Update Vehicle
+4. Search Vehicle
+5. Display Vehicles
+6. Exit
+
+----------------------------------------
+
+Enter your choice: 1
+
+Enter Vehicle ID: 101
+Enter Vehicle Name: TruckA
+Enter Vehicle Type: Truck
+Enter Mileage: 12.5
+Vehicle Added Successfully!
+
+----------------------------------------
+
+Enter your choice: 1
+
+Enter Vehicle ID: 102
+Enter Vehicle Name: CarB
+Enter Vehicle Type: Car
+Enter Mileage: 18.2
+Vehicle Added Successfully!
+
+----------------------------------------
+
+Enter your choice: 5
+
+--- Vehicle List ---
+ID: 102 | Name: CarB | Type: Car | Mileage: 18.20
+ID: 101 | Name: TruckA | Type: Truck | Mileage: 12.50
+
+----------------------------------------
+
+Enter your choice: 4
+
+Enter Vehicle ID to search: 101
+Found -> ID: 101 | Name: TruckA | Type: Truck | Mileage: 12.50
+
+----------------------------------------
+
+Enter your choice: 3
+
+Enter Vehicle ID to update: 102
+Enter New Name: CarX
+Enter New Type: SUV
+Enter New Mileage: 20.5
+Vehicle updated successfully.
+
+----------------------------------------
+
+Enter your choice: 2
+
+Enter Vehicle ID to delete: 101
+Vehicle deleted successfully.
+
+----------------------------------------
+
+Enter your choice: 5
+
+--- Vehicle List ---
+ID: 102 | Name: CarX | Type: SUV | Mileage: 20.50
+
+----------------------------------------
+
+Enter your choice: 6
+Exiting program...
