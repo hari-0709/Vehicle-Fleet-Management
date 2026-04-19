@@ -140,4 +140,5 @@ ID: 102 | Name: CarX | Type: SUV | Mileage: 20.50
 
 Enter your choice: 6
 Exiting...
+
 ---
